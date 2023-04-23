@@ -32,6 +32,16 @@ public class EntityController {
         return new CreateSubsetResponse(entity.getID());
     }
 
+    @PostMapping("/create_generalisation")
+    public CreateGeneralisationResponse createGeneralisation(@RequestBody @Valid CreateGeneralisationRequest request) {
+        Schema schema = Schema.queryByID(request.getSchemaID());
+        Entity strongEntity = Entity.queryByID(request.getBelongStrongEntityID());
+        Entity entity = schema.addGeneralisation(request.getSubsetName(), strongEntity);
+        entity.updateLayoutInfo(request.getLayoutInfo().getLayoutX(), request.getLayoutInfo().getLayoutY());
+        entity.updateAimPort(request.getAimPort());
+        return new CreateGeneralisationResponse(entity.getID());
+    }
+
     @PostMapping("/create_weak_entity")
     public CreateWeakEntityResponse createWeakEntity(@RequestBody @Valid CreateWeakEntityRequest request) {
         Schema schema = Schema.queryByID(request.getSchemaID());
@@ -50,7 +60,6 @@ public class EntityController {
         entity.updateLayoutInfo(request.getLayoutInfo().getLayoutX(), request.getLayoutInfo().getLayoutY());
         return new CreateEmptyEntityResponse(entity.getID());
     }
-
 
     @PostMapping("/update")
     public UpdateEntityResponse updateEntity(@RequestBody @Valid UpdateEntityRequest request) {

@@ -39,8 +39,8 @@ public class SchemaController {
         return new DeleteSchemaResponse();
     }
 
-    @GetMapping("/get_by_id")
-    public GetSchemaByIDResponse getByID(GetSchemaByIDRequest request) {
+    @PostMapping("/get_by_id")
+    public GetSchemaByIDResponse getByID(@RequestBody @Valid GetSchemaByIDRequest request) {
         Schema schema = Schema.queryByID(request.getID());
         return new GetSchemaByIDResponse(Trans.Transform(schema));
     }
@@ -57,8 +57,8 @@ public class SchemaController {
         return new ExportSchemaToJSONResponse(schema.toJSON());
     }
 
-    @GetMapping("/export_schema_to_ddl")
-    public ExportSchemaToDDLResponse exportSchemaToDDL(ExportSchemaToDDLRequest request) throws ParseException {
+    @PostMapping("/export_schema_to_ddl")
+    public ExportSchemaToDDLResponse exportSchemaToDDL(@RequestBody @Valid ExportSchemaToDDLRequest request) throws ParseException {
         Schema schema = Schema.queryByID(request.getID());
         return new ExportSchemaToDDLResponse(schema.generateSqlStatement());
     }
@@ -68,4 +68,10 @@ public class SchemaController {
         Schema schema = ER.loadFromJSON(request.getSchemaJSON());
         return new LoadSchemaFromJSONResponse(Trans.Transform(schema));
     }
+
+//    @PostMapping("/connect_database_and_execute_ddl")
+//    public connectDatabaseAndExecuteDDLResponse connectDatabaseAndExecuteDDL(@RequestBody @Valid connectDatabaseAndExecuteDDLRequest request) {
+//
+//        return new connectDatabaseAndExecuteDDLResponse();
+//    }
 }

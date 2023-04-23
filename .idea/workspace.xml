@@ -4,14 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd077f0b-50be-4cb5-bae8-3b8201182521" name="Default Changelist" comment="" />
+    <list default="true" id="cd077f0b-50be-4cb5-bae8-3b8201182521" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/amazing_er.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/amazing_er__2_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/amazing_er__3_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/amazing_err.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/new_amazing_er.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/dto/TryToLoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/dto/TryToLoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/er_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/er_backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_lib/amazing-er.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/controller/EntityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/controller/EntityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/controller/SchemaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/controller/SchemaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ic/ac/er_backend/controller/EntityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ic/ac/er_backend/controller/EntityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ic/ac/er_backend/controller/SchemaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ic/ac/er_backend/controller/SchemaController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -33,13 +64,30 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/my_lib" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/my_lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/my_lib" />
+      <recent name="$PROJECT_DIR$/test_lib" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -62,6 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test_lib" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/test_lib/amazing-err.jar" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
     <configuration name="ErBackendApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="er-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ic.ac.er_backend.ErBackendApplication" />
@@ -72,10 +126,17 @@
     <configuration name="ErBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="er_backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ic.ac.er_backend.ErBackendApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JAR Application.test_lib" />
+      <item itemvalue="Spring Boot.ErBackendApplication" />
+      <item itemvalue="Spring Boot.ErBackendApplication (1)" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -89,6 +150,17 @@
       <workItem from="1676139006005" duration="133000" />
       <workItem from="1676139148350" duration="239000" />
       <workItem from="1676139487236" duration="139000" />
+      <workItem from="1676139683381" duration="2180000" />
+      <workItem from="1676293359538" duration="2066000" />
+      <workItem from="1676457448657" duration="496000" />
+      <workItem from="1676759929904" duration="2702000" />
+      <workItem from="1678316910228" duration="20411000" />
+      <workItem from="1678709690648" duration="998000" />
+      <workItem from="1680171631127" duration="847000" />
+      <workItem from="1680225937174" duration="207000" />
+      <workItem from="1680263671557" duration="2382000" />
+      <workItem from="1680480711398" duration="19742000" />
+      <workItem from="1681921953502" duration="11469000" />
     </task>
     <servers />
   </component>
@@ -111,5 +183,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/er_backend" />
     </ignored-roots>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/er_backend$ErBackendApplication.ic" NAME="ErBackendApplication Coverage Results" MODIFIED="1678532682206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

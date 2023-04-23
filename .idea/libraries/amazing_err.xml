@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="amazing-err">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/test_lib/amazing-err.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
