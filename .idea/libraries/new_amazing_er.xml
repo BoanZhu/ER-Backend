@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="new amazing-er">
+  <library name="new-amazing-er">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/my_lib/new amazing-er.jar!/" />
+      <root url="jar://$PROJECT_DIR$/my_lib/new-amazing-er.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

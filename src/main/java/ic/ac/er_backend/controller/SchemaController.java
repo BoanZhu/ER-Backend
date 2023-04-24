@@ -3,6 +3,7 @@ package ic.ac.er_backend.controller;
 import ic.ac.er_backend.dto.*;
 import io.github.MigadaTang.ER;
 import io.github.MigadaTang.Schema;
+import io.github.MigadaTang.exception.DBConnectionException;
 import io.github.MigadaTang.exception.ERException;
 import io.github.MigadaTang.exception.ParseException;
 import org.springframework.web.bind.annotation.*;
@@ -69,9 +70,19 @@ public class SchemaController {
         return new LoadSchemaFromJSONResponse(Trans.Transform(schema));
     }
 
-//    @PostMapping("/connect_database_and_execute_ddl")
-//    public connectDatabaseAndExecuteDDLResponse connectDatabaseAndExecuteDDL(@RequestBody @Valid connectDatabaseAndExecuteDDLRequest request) {
-//
-//        return new connectDatabaseAndExecuteDDLResponse();
-//    }
+    @PostMapping("/connect_database_and_execute_ddl")
+    public connectDatabaseAndExecuteDDLResponse connectDatabaseAndExecuteDDL(@RequestBody @Valid connectDatabaseAndExecuteDDLRequest request)
+        throws DBConnectionException, ParseException {
+        Boolean result;
+        String response = "Success!";
+        try {
+            result = ER.connectToDatabaseAndExecuteSql(request.getDatabaseType(), request.getHostname(), request.getPortNumber(), request.getDatabaseName(),
+                request.getUsername(), request.getPassword(), request.getDdl());
+        } catch (Exception e) {
+            response = e.getMessage();
+            result = false;
+        }
+
+        return new connectDatabaseAndExecuteDDLResponse(result, response);
+    }
 }
