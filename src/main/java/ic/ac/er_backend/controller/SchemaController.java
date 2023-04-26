@@ -85,4 +85,15 @@ public class SchemaController {
 
         return new connectDatabaseAndExecuteDDLResponse(result, response);
     }
+
+    @PostMapping("/validate_schema")
+    public validateSchemaResponse validateSchema(@RequestBody @Valid validateSchemaRequest request) {
+        Schema schema = Schema.queryByID(request.getSchemaID());
+        try {
+            schema.comprehensiveCheck();
+        } catch (Exception e) {
+            return new validateSchemaResponse(e.getMessage(), false);
+        }
+        return new validateSchemaResponse("Current schema is legal", true);
+    }
 }
