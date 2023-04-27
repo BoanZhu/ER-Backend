@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd077f0b-50be-4cb5-bae8-3b8201182521" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/dto/validateSchemaRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/dto/validateSchemaResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/dto/renderSchemaAsImageRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/dto/renderSchemaAsImageResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/controller/SchemaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ic/ac/er_backend/controller/SchemaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ic/ac/er_backend/controller/SchemaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ic/ac/er_backend/controller/SchemaController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +150,7 @@
       <workItem from="1680225937174" duration="207000" />
       <workItem from="1680263671557" duration="2382000" />
       <workItem from="1680480711398" duration="19742000" />
-      <workItem from="1681921953502" duration="19387000" />
+      <workItem from="1681921953502" duration="24765000" />
     </task>
     <servers />
   </component>

@@ -96,4 +96,20 @@ public class SchemaController {
         }
         return new validateSchemaResponse("Current schema is legal", true);
     }
+
+    @PostMapping("/render_schema_as_image")
+    public renderSchemaAsImageResponse renderSchemaAsImage(@RequestBody @Valid renderSchemaAsImageRequest request)
+        throws ParseException {
+        Schema schema = Schema.queryByID(request.getSchemaID());
+        schema.comprehensiveCheck();
+        try {
+            String filePath = request.getFilePath();
+            System.out.println("FIlePath: " + filePath);
+            schema.renderAsImage("/Users/boanzhu/Desktop/" + filePath);
+        } catch (Exception e) {
+            return new renderSchemaAsImageResponse("Fail to render the image!", false);
+        }
+
+        return new renderSchemaAsImageResponse("Success to render as an image!", true);
+    }
 }
