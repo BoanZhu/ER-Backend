@@ -52,10 +52,15 @@ public class SchemaController {
         return new QueryAllSchemasResponse(Trans.TransSchemaList(schemaList));
     }
 
-    @GetMapping("/export_schema_to_json")
-    public ExportSchemaToJSONResponse exportSchemaToJSON(ExportSchemaToJSONRequest request) {
+    @PostMapping("/export_schema_to_json")
+    public ExportSchemaToJSONResponse exportSchemaToJSON(@RequestBody @Valid ExportSchemaToJSONRequest request) {
+        System.out.println("Request: " + request);
+        System.out.println("Request.ID: " + request.getID());
         Schema schema = Schema.queryByID(request.getID());
-        return new ExportSchemaToJSONResponse(schema.toJSON());
+//        Schema schema = Schema.queryByID((Long) "1168");
+//        String schemaJSON = schema.toJSON();
+        String schemaJSON = schema.toRenderJSON();
+        return new ExportSchemaToJSONResponse(schemaJSON);
     }
 
     @PostMapping("/export_schema_to_ddl")
