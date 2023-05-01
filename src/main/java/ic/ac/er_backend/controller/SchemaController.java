@@ -3,9 +3,11 @@ package ic.ac.er_backend.controller;
 import ic.ac.er_backend.dto.*;
 import io.github.MigadaTang.ER;
 import io.github.MigadaTang.Schema;
+import io.github.MigadaTang.common.RDBMSType;
 import io.github.MigadaTang.exception.DBConnectionException;
 import io.github.MigadaTang.exception.ERException;
 import io.github.MigadaTang.exception.ParseException;
+import io.github.MigadaTang.transform.Reverse;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -116,5 +118,34 @@ public class SchemaController {
         }
 
         return new renderSchemaAsImageResponse("Success to render as an image!", true);
+    }
+
+    @PostMapping("/reverse_engineer")
+    public reverseEngineerResponse reverseEngineer(@RequestBody @Valid reverseEngineerRequest request)
+        throws DBConnectionException, ParseException {
+
+        Reverse reverse = new Reverse();
+
+        RDBMSType databaseType = null;
+        String databaseString = request.getDatabaseType();
+        if (databaseString.equals("POSTGRESQL") || databaseString.equals("postgresql")) {
+            databaseType = RDBMSType.POSTGRESQL;
+        } else if (databaseString.equals("H2") || databaseString.equals("h2")) {
+            databaseType = RDBMSType.H2;
+        } else if (databaseString.equals("SQLSERVER") || databaseString.equals("sqlserver")) {
+            databaseType = RDBMSType.SQLSERVER;
+        } else if (databaseString.equals("DB2") || databaseString.equals("db2")) {
+            databaseType = RDBMSType.DB2;
+        } else if (databaseString.equals("ORACLE") || databaseString.equals("oracle")) {
+            databaseType = RDBMSType.ORACLE;
+        } else if (databaseString.equals("MYSQL") || databaseString.equals("mysql")) {
+            databaseType = RDBMSType.MYSQL;
+        }
+
+        Schema schema = reverse.relationSchemasToERModel(databaseType, request.getHostname(),
+            request.getPortNumber(), request.getDatabaseName(), request.getUsername(), request.getPassword());
+        String JSON = schema.toRenderJSON();
+        System.out.println("JSON: " + JSON);
+        return new reverseEngineerResponse(true, "Reverse engineer success!", JSON);
     }
 }

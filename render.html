@@ -11,112 +11,91 @@
 </div>
 <div id ="image" style="width:50%;position:absolute;left: 50%;">123</div>
 <div id = "modelData" style="display:none" >{"schema":{
-  "id" : 1157,
-  "name" : "Render1",
+  "id" : 1176,
+  "name" : "reverseEng",
   "entityList" : [ {
-    "id" : 3699,
-    "name" : "Dog",
+    "id" : 3733,
+    "name" : "department",
     "entityType" : 1,
     "attributeList" : [ {
-      "id" : 3162,
-      "name" : "Name",
-      "belongObjID" : 3699,
+      "id" : 3225,
+      "name" : "office_no",
+      "belongObjID" : 3733,
+      "belongObjType" : 2,
+      "dataType" : 3,
+      "isPrimary" : false,
+      "attributeType" : 1,
+      "aimPort" : -1,
+      "layoutInfo" : null
+    }, {
+      "id" : 3226,
+      "name" : "dname",
+      "belongObjID" : 3733,
       "belongObjType" : 2,
       "dataType" : 3,
       "isPrimary" : true,
       "attributeType" : 1,
       "aimPort" : -1,
-      "layoutInfo" : {
-        "layoutX" : 480.0,
-        "layoutY" : 390.0
-      }
-    }, {
-      "id" : 3163,
-      "name" : "Owner",
-      "belongObjID" : 3699,
-      "belongObjType" : 2,
-      "dataType" : 3,
-      "isPrimary" : false,
-      "attributeType" : 2,
-      "aimPort" : -1,
-      "layoutInfo" : {
-        "layoutX" : 480.0,
-        "layoutY" : 490.0
-      }
+      "layoutInfo" : null
     } ],
     "aimPort" : -1,
     "belongStrongEntityID" : null,
-    "layoutInfo" : {
-      "layoutX" : 260.0,
-      "layoutY" : 430.0
-    }
+    "layoutInfo" : null
   }, {
-    "id" : 3700,
-    "name" : "Cat",
+    "id" : 3734,
+    "name" : "managers",
     "entityType" : 1,
     "attributeList" : [ {
-      "id" : 3165,
-      "name" : "Owner",
-      "belongObjID" : 3700,
-      "belongObjType" : 2,
-      "dataType" : 3,
-      "isPrimary" : false,
-      "attributeType" : 2,
-      "aimPort" : -1,
-      "layoutInfo" : {
-        "layoutX" : 470.0,
-        "layoutY" : 790.0
-      }
-    }, {
-      "id" : 3164,
-      "name" : "Name",
-      "belongObjID" : 3700,
+      "id" : 3227,
+      "name" : "name",
+      "belongObjID" : 3734,
       "belongObjType" : 2,
       "dataType" : 3,
       "isPrimary" : true,
       "attributeType" : 1,
       "aimPort" : -1,
-      "layoutInfo" : {
-        "layoutX" : 470.0,
-        "layoutY" : 700.0
-      }
+      "layoutInfo" : null
+    }, {
+      "id" : 3228,
+      "name" : "dog_name",
+      "belongObjID" : 3734,
+      "belongObjType" : 2,
+      "dataType" : 3,
+      "isPrimary" : false,
+      "attributeType" : 2,
+      "aimPort" : -1,
+      "layoutInfo" : null
     } ],
     "aimPort" : -1,
     "belongStrongEntityID" : null,
-    "layoutInfo" : {
-      "layoutX" : 260.0,
-      "layoutY" : 730.0
-    }
+    "layoutInfo" : null
   } ],
   "relationshipList" : [ {
-    "id" : 1366,
-    "name" : "Loves",
+    "id" : 1381,
+    "name" : "unknow",
     "attributeList" : [ ],
     "edgeList" : [ {
-      "id" : 2379,
-      "relationshipID" : 1366,
-      "belongObjID" : 3699,
+      "id" : 2407,
+      "relationshipID" : 1381,
+      "belongObjID" : 3734,
       "belongObjType" : 2,
-      "belongObjName" : "Dog",
+      "belongObjName" : "managers",
       "isKey" : false,
       "cardinality" : 2,
       "portAtRelationship" : -1,
       "portAtBelongObj" : -1
     }, {
-      "id" : 2380,
-      "relationshipID" : 1366,
-      "belongObjID" : 3700,
+      "id" : 2408,
+      "relationshipID" : 1381,
+      "belongObjID" : 3733,
       "belongObjType" : 2,
-      "belongObjName" : "Cat",
+      "belongObjName" : "department",
       "isKey" : false,
-      "cardinality" : 3,
+      "cardinality" : 2,
       "portAtRelationship" : -1,
       "portAtBelongObj" : -1
     } ],
-    "layoutInfo" : {
-      "layoutX" : 290.0,
-      "layoutY" : 590.0
-    }
+    "layoutInfo" : null
   } ]
 }}</div>
 </body>
