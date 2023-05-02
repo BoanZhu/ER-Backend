@@ -51,7 +51,7 @@
             <artifactId>amazing-er</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/my_lib/amazing-er.jar</systemPath>
+            <systemPath>my_lib/amazing-er 5.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>javax.validation</groupId>

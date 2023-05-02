@@ -11,26 +11,16 @@
 </div>
 <div id ="image" style="width:50%;position:absolute;left: 50%;">123</div>
 <div id = "modelData" style="display:none" >{"schema":{
-  "id" : 1176,
+  "id" : 1203,
   "name" : "reverseEng",
   "entityList" : [ {
-    "id" : 3733,
-    "name" : "department",
+    "id" : 3787,
+    "name" : "person",
     "entityType" : 1,
     "attributeList" : [ {
-      "id" : 3225,
-      "name" : "office_no",
-      "belongObjID" : 3733,
-      "belongObjType" : 2,
-      "dataType" : 3,
-      "isPrimary" : false,
-      "attributeType" : 1,
-      "aimPort" : -1,
-      "layoutInfo" : null
-    }, {
-      "id" : 3226,
-      "name" : "dname",
-      "belongObjID" : 3733,
+      "id" : 3337,
+      "name" : "salary_number",
+      "belongObjID" : 3787,
       "belongObjType" : 2,
       "dataType" : 3,
       "isPrimary" : true,
@@ -42,61 +32,35 @@
     "belongStrongEntityID" : null,
     "layoutInfo" : null
   }, {
-    "id" : 3734,
-    "name" : "managers",
-    "entityType" : 1,
+    "id" : 3788,
+    "name" : "swipe_card",
+    "entityType" : 3,
     "attributeList" : [ {
-      "id" : 3227,
-      "name" : "name",
-      "belongObjID" : 3734,
+      "id" : 3338,
+      "name" : "date",
+      "belongObjID" : 3788,
       "belongObjType" : 2,
       "dataType" : 3,
-      "isPrimary" : true,
+      "isPrimary" : false,
       "attributeType" : 1,
       "aimPort" : -1,
       "layoutInfo" : null
     }, {
-      "id" : 3228,
-      "name" : "dog_name",
-      "belongObjID" : 3734,
+      "id" : 3339,
+      "name" : "issue",
+      "belongObjID" : 3788,
       "belongObjType" : 2,
       "dataType" : 3,
       "isPrimary" : false,
-      "attributeType" : 2,
+      "attributeType" : 1,
       "aimPort" : -1,
       "layoutInfo" : null
     } ],
     "aimPort" : -1,
-    "belongStrongEntityID" : null,
+    "belongStrongEntityID" : "3787",
     "layoutInfo" : null
   } ],
-  "relationshipList" : [ {
-    "id" : 1381,
-    "name" : "unknow",
-    "attributeList" : [ ],
-    "edgeList" : [ {
-      "id" : 2407,
-      "relationshipID" : 1381,
-      "belongObjID" : 3734,
-      "belongObjType" : 2,
-      "belongObjName" : "managers",
-      "isKey" : false,
-      "cardinality" : 2,
-      "portAtRelationship" : -1,
-      "portAtBelongObj" : -1
-    }, {
-      "id" : 2408,
-      "relationshipID" : 1381,
-      "belongObjID" : 3733,
-      "belongObjType" : 2,
-      "belongObjName" : "department",
-      "isKey" : false,
-      "cardinality" : 2,
-      "portAtRelationship" : -1,
-      "portAtBelongObj" : -1
-    } ],
-    "layoutInfo" : null
-  } ]
+  "relationshipList" : [ ]
 }}</div>
 </body>
 <script id="code">

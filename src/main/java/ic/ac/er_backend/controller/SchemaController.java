@@ -68,6 +68,7 @@ public class SchemaController {
     @PostMapping("/export_schema_to_ddl")
     public ExportSchemaToDDLResponse exportSchemaToDDL(@RequestBody @Valid ExportSchemaToDDLRequest request) throws ParseException {
         Schema schema = Schema.queryByID(request.getID());
+//        String ddl = schema.generateSqlStatement();
         return new ExportSchemaToDDLResponse(schema.generateSqlStatement());
     }
 
@@ -145,7 +146,7 @@ public class SchemaController {
         Schema schema = reverse.relationSchemasToERModel(databaseType, request.getHostname(),
             request.getPortNumber(), request.getDatabaseName(), request.getUsername(), request.getPassword());
         String JSON = schema.toRenderJSON();
-        System.out.println("JSON: " + JSON);
+//        System.out.println("JSON: " + JSON);
         return new reverseEngineerResponse(true, "Reverse engineer success!", JSON);
     }
 }
