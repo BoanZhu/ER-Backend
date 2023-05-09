@@ -2,12 +2,17 @@ package ic.ac.er_backend.controller;
 
 import ic.ac.er_backend.dto.*;
 import io.github.MigadaTang.ER;
+import io.github.MigadaTang.Entity;
 import io.github.MigadaTang.Schema;
 import io.github.MigadaTang.common.RDBMSType;
 import io.github.MigadaTang.exception.DBConnectionException;
 import io.github.MigadaTang.exception.ERException;
 import io.github.MigadaTang.exception.ParseException;
+import io.github.MigadaTang.transform.ParserUtil;
 import io.github.MigadaTang.transform.Reverse;
+import io.github.MigadaTang.transform.Table;
+import java.util.ArrayList;
+import java.util.Map;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -17,9 +22,13 @@ import java.util.List;
 @RequestMapping("/er/schema")
 public class SchemaController {
 
+    private List<Table> oldTables = new ArrayList<>();
+
     @PostMapping("/create")
     public CreateSchemaResponse createSchema(@RequestBody @Valid CreateSchemaRequest request) {
         Schema schema = ER.createSchema(request.getName());
+//        this.oldTables = new ArrayList<>();
+        System.out.println(this.oldTables.size());
         return new CreateSchemaResponse(schema.getID());
     }
 
@@ -68,8 +77,28 @@ public class SchemaController {
     @PostMapping("/export_schema_to_ddl")
     public ExportSchemaToDDLResponse exportSchemaToDDL(@RequestBody @Valid ExportSchemaToDDLRequest request) throws ParseException {
         Schema schema = Schema.queryByID(request.getID());
+        System.out.println(this.oldTables);
+        for (Table table: this.oldTables) {
+            System.out.println("Table: " + table);
+        }
+
+        schema.setOldTables(this.oldTables);
+        String ddl = schema.generateSqlStatement();
+        for (Entity entity: schema.getEntityList()) {
+            System.out.println("ENTITY ID: " + entity.getName() + " " + entity.getID());
+        }
+
+        Map<Long, Table> tableDTOList = ParserUtil.parseRelationshipsToAttribute(schema.getEntityList(), schema.getRelationshipList());
+
+
+        for (Table table: tableDTOList.values()) {
+            System.out.println("123: " + table.getName() + " " + table.getId());
+        }
+        this.oldTables = new ArrayList<>();
+        this.oldTables.addAll(tableDTOList.values());
 //        String ddl = schema.generateSqlStatement();
-        return new ExportSchemaToDDLResponse(schema.generateSqlStatement());
+        System.out.println("ddl: " + ddl);
+        return new ExportSchemaToDDLResponse(ddl);
     }
 
     @PostMapping("/load_schema_from_json")
@@ -145,6 +174,14 @@ public class SchemaController {
 
         Schema schema = reverse.relationSchemasToERModel(databaseType, request.getHostname(),
             request.getPortNumber(), request.getDatabaseName(), request.getUsername(), request.getPassword());
+
+        Map<Long, Table> tableDTOList = ParserUtil.parseRelationshipsToAttribute(schema.getEntityList(), schema.getRelationshipList());
+        this.oldTables = new ArrayList<>();
+        this.oldTables.addAll(tableDTOList.values());
+        for (Table table: tableDTOList.values()) {
+            System.out.println("TABLE ID: " + table.getName() + " " + table.getId());
+        }
+
         String JSON = schema.toRenderJSON();
 //        System.out.println("JSON: " + JSON);
         return new reverseEngineerResponse(true, "Reverse engineer success!", JSON);
