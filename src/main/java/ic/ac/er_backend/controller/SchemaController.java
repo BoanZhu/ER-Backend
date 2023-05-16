@@ -27,8 +27,8 @@ public class SchemaController {
     @PostMapping("/create")
     public CreateSchemaResponse createSchema(@RequestBody @Valid CreateSchemaRequest request) {
         Schema schema = ER.createSchema(request.getName());
-//        this.oldTables = new ArrayList<>();
-        System.out.println(this.oldTables.size());
+        this.oldTables = new ArrayList<>();
+//        System.out.println(this.oldTables.size());
         return new CreateSchemaResponse(schema.getID());
     }
 
@@ -79,9 +79,19 @@ public class SchemaController {
         Schema schema = Schema.queryByID(request.getID());
 
         schema.setOldTables(this.oldTables);
+
+        System.out.println("Size: " + this.oldTables.size());
+
         String ddl = schema.generateSqlStatement();
+        System.out.println(schema.getEntityList());
+        for (Entity entity: schema.getEntityList()) {
+            System.out.println("Entity: " + entity);
+        }
 
         Map<Long, Table> tableDTOList = ParserUtil.parseRelationshipsToAttribute(schema.getEntityList(), schema.getRelationshipList());
+        for (Table table: tableDTOList.values()) {
+            System.out.println("Table: " + table);
+        }
 
         this.oldTables = new ArrayList<>();
         this.oldTables.addAll(tableDTOList.values());
