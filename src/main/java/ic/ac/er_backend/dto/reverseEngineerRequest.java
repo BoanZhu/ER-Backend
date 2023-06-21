@@ -20,4 +20,6 @@ public class reverseEngineerRequest {
   String username;
   @NotNull
   String password;
+  @NotNull
+  String requirement;
 }

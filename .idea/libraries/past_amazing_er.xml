@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="past-amazing-er">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/my_lib/past-amazing-er.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
