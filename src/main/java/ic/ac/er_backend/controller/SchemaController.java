@@ -84,7 +84,7 @@ public class SchemaController {
     public DeleteAllSchemasResponse deleteAllSchemas(DeleteAllSchemasRequest request) {
 //        ER.deleteAllSchema();
 //        for (int i = 1136; i <= 1768; i++) {
-        for (int i = 1769; i <= 1988; i++) {
+        for (int i = 2131; i <= 2153; i++) {
             Long id = (long) i;
             Schema schema = Schema.queryByID(id);
             ER.deleteSchema(schema);
@@ -206,7 +206,7 @@ public class SchemaController {
             requirement = false;
         }
 
-        Schema schema = reverse.relationSchemasToERModel(databaseType, request.getHostname(),
+        Schema schema = reverse.relationSchemasToERModelWithLayoutInformation(databaseType, request.getHostname(),
             request.getPortNumber(), request.getDatabaseName(), request.getUsername(), request.getPassword(), requirement);
 
         String JSON = schema.toRenderJSON();
