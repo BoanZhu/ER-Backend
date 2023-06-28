@@ -11,7 +11,7 @@ run locally currently.
 Download this sub-project using the following command line:
 
 ```
-git clone https://gitlab.doc.ic.ac.uk/bz2818/er-backend.git
+git clone https://github.com/BoanZhu/ER-Backend.git
 ```
 
 ## How to use
